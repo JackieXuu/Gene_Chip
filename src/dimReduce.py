@@ -62,17 +62,17 @@ def check(filename):
 	
 
 if __name__ == '__main__':
-	#filename = '../data/microarray.original.txt'
+	filename = '../data/microarray.original.txt'
 	#filename = '../data/finalData.txt'
-	filename = '../data/processedData_0.95.txt'
+	#filename = '../data/processedData_0.95.txt'
 	labelfile = '../data/E-TABM-185.sdrf.txt'
 	classType = check(labelfile)
 	print "The number of class is {}".format(len(classType))
 	print classType
 	feature = readData(filename)
 	print "Finish reading the data. The number is {}. The dimensions of feature are {}".format(feature.shape[0], feature.shape[1])
-	#filename = '../data/processedData_0.90_second.txt'
-	#new_feature, _ = pca(feature, 0.90)
-	#print "Feature is reduced to {} dimensions.".format(new_feature.shape[1])
-	#writeData(filename, new_feature)
-	#print "New feature has been written. The number is {}. The new dimensions are {}".format(new_feature.shape[0], new_feature.shape[1])
+	filename = '../data/processedData_0.85.txt'
+	new_feature, _ = pca(feature, 0.85)
+	print "Feature is reduced to {} dimensions.".format(new_feature.shape[1])
+	writeData(filename, new_feature)
+	print "New feature has been written. The number is {}. The new dimensions are {}".format(new_feature.shape[0], new_feature.shape[1])

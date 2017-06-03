@@ -36,7 +36,7 @@ def init(X, Y):
 
 
 def train(X_train, Y_train, X_test, Y_test):
-	learning_rates = [1e-3, 2e-3, 3e-3, 5e-3, 8e-3, 1e-2, 3e-2, 5e-2, 8e-2]
+	learning_rates = [1e-3, 3e-3, 5e-3, 8e-3, 1e-2, 3e-2, 5e-2, 8e-2]
 	regularization_strengths = [1e-2, 2e-2, 3e-2, 4e-2, 5e-2, 6e-2, 7e-2, 8e-2, 1e-3]
 	results = {}
 	loss = {}
@@ -99,9 +99,9 @@ def drawAccFig(result, best_reg):
         plt.legend(['lr = %.3f'%learning_rate[0], 'lr = %.3f'%learning_rate[1], 'lr = %.3f'%learning_rate[2], 'lr = %.3f'%learning_rate[3], 'lr = %.3f'%learning_rate[4], 'lr = %.3f'%learning_rate[5], 'lr = %.3f'%learning_rate[6], 'lr = %.3f'%learning_rate[7]], loc='lower right')
         plt.xlabel('Iteration number')
         plt.ylabel('Training Accuracy')
-        plt.show()
+        #plt.show()
         plt.savefig('acc.png')
-
+        plt.show()
 
 if __name__ == '__main__':
 	import sklearn.metrics
